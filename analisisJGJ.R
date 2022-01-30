@@ -227,11 +227,27 @@ wordcloud(words = names(wRB),
 # --------------------------------------------------
 # Analizando los sentimientos de las frases
 s <- get_nrc_sentiment(reinaRoja)
-head(s)
-
 
 barplot(colSums(s),
         las = 2,
         col = rainbow(10),
-        ylab = 'Count',
-        main = 'Sentiment Scores Tweets')
+        ylab = 'Número',
+        main = 'Sentimientos de frases en Reina Roja')
+
+
+s2 <- get_nrc_sentiment(lobaNegra)
+
+barplot(colSums(s2),
+        las = 2,
+        col = rainbow(10),
+        ylab = 'Número',
+        main = 'Sentimientos de frases en Loba Negra')
+
+
+s3 <- get_nrc_sentiment(reyBlanco)
+
+barplot(colSums(s3),
+        las = 2,
+        col = rainbow(10),
+        ylab = 'Número',
+        main = 'Sentimientos de frases en Rey Blanco')
